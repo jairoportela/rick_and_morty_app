@@ -2,6 +2,7 @@ import 'package:json_annotation/json_annotation.dart';
 
 part 'character.g.dart';
 
+@JsonSerializable()
 class Character {
   const Character({
     required this.id,
@@ -22,7 +23,7 @@ class Character {
       _$CharacterFromJson(json);
 }
 
-@JsonEnum(valueField: 'status')
+@JsonEnum(valueField: 'name')
 enum CharacterStatus {
   alive('Alive'),
   dead('Dead'),
@@ -32,7 +33,7 @@ enum CharacterStatus {
   final String name;
 }
 
-@JsonEnum(valueField: 'gender')
+@JsonEnum(valueField: 'name')
 enum CharacterGender {
   female('Female'),
   male('Male'),
