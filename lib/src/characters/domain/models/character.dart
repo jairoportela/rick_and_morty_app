@@ -2,7 +2,7 @@ import 'package:json_annotation/json_annotation.dart';
 
 part 'character.g.dart';
 
-@JsonSerializable()
+@JsonSerializable(createToJson: false)
 class Character {
   const Character({
     required this.id,

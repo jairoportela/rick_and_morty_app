@@ -2,7 +2,7 @@ import 'package:json_annotation/json_annotation.dart';
 
 part 'location.g.dart';
 
-@JsonSerializable()
+@JsonSerializable(createToJson: false)
 class Location {
   const Location({
     required this.id,

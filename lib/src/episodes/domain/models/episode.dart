@@ -2,7 +2,7 @@ import 'package:json_annotation/json_annotation.dart';
 
 part 'episode.g.dart';
 
-@JsonSerializable()
+@JsonSerializable(createToJson: false)
 class Episode {
   const Episode({
     required this.id,
@@ -11,7 +11,9 @@ class Episode {
     required this.episode,
   });
   final int id;
-  final String name, airDate, episode;
+  final String name, episode;
+  @JsonKey(name: 'air_date')
+  final String airDate;
 
   factory Episode.fromJson(Map<String, dynamic> json) =>
       _$EpisodeFromJson(json);

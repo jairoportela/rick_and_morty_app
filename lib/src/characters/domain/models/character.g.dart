@@ -16,16 +16,6 @@ Character _$CharacterFromJson(Map<String, dynamic> json) => Character(
       type: json['type'] as String,
     );
 
-Map<String, dynamic> _$CharacterToJson(Character instance) => <String, dynamic>{
-      'id': instance.id,
-      'name': instance.name,
-      'species': instance.species,
-      'type': instance.type,
-      'image': instance.image,
-      'status': _$CharacterStatusEnumMap[instance.status]!,
-      'gender': _$CharacterGenderEnumMap[instance.gender]!,
-    };
-
 const _$CharacterGenderEnumMap = {
   CharacterGender.female: 'Female',
   CharacterGender.male: 'Male',
