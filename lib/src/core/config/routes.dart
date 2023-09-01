@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:rick_and_morty_app/src/characters/presentation/screens/characters_screen.dart';
+import 'package:rick_and_morty_app/src/episodes/presentation/screens/episodes_screen.dart';
 import 'package:rick_and_morty_app/src/home/home_screen.dart';
 
 class RouteGenerator {
   static const home = HomeScreen.routePath;
   static const charactersScreen = CharactersScreen.routePath;
+  static const episodesScreen = EpisodesScreen.routePath;
 
   static Route<dynamic> generateRoute(RouteSettings settings) {
     switch (settings.name) {
@@ -15,6 +17,10 @@ class RouteGenerator {
       case charactersScreen:
         return MaterialPageRoute<CharactersScreen>(
           builder: (_) => const CharactersScreen(),
+        );
+      case episodesScreen:
+        return MaterialPageRoute<EpisodesScreen>(
+          builder: (_) => const EpisodesScreen(),
         );
       default:
         return MaterialPageRoute<HomeScreen>(
