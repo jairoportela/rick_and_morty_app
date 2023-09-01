@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:rick_and_morty_app/src/core/presentation/widgets/custom_form_field.dart';
+import 'package:rick_and_morty_app/src/core/presentation/widgets/custom_modal_sheet.dart';
+import 'package:rick_and_morty_app/src/core/presentation/widgets/filter_button.dart';
+import 'package:rick_and_morty_app/src/core/presentation/widgets/separators.dart';
 import 'package:rick_and_morty_app/src/locations/domain/models/locations_filter.dart';
 
 class LocationsFilterModal extends StatefulWidget {
@@ -20,38 +24,27 @@ class _LocationsFilterModalState extends State<LocationsFilterModal> {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding:
-          EdgeInsets.only(bottom: MediaQuery.of(context).viewInsets.bottom),
-      child: SizedBox(
-        height: 300,
-        child: Padding(
-          padding: const EdgeInsets.all(10).copyWith(bottom: 0),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              const Text('Locations Filters'),
-              TextFormField(
-                initialValue: _filters.searchName,
-                onChanged: (search) {
-                  final value = _filters.copyWith(searchName: () => search);
-                  setState(() {
-                    _filters = value;
-                  });
-                },
-              ),
-              ElevatedButton(
-                onPressed: () {
-                  Navigator.pop(context,
-                      widget.initialFilters != _filters ? _filters : null);
-                },
-                child: const Text('Filter'),
-              ),
-            ],
+    return CustomModalBottomSheet(
+      title: 'Locations Filters',
+      children: [
+        CustomFormField(
+          title: 'Name',
+          formField: CustomTextFormField(
+            initialValue: _filters.searchName,
+            onChanged: (search) {
+              final value = _filters.copyWith(searchName: () => search);
+              setState(() {
+                _filters = value;
+              });
+            },
           ),
         ),
-      ),
+        const VerticalSeparator(),
+        FilterButton(
+          modifyFilter: _filters,
+          initialFilter: widget.initialFilters,
+        ),
+      ],
     );
   }
 }

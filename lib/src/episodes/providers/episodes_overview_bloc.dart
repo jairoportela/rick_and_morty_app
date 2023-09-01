@@ -28,6 +28,7 @@ class EpisodesOverviewBloc
         state.copyWith(
           status: RequestStatus.loading,
           items: page == 1 ? [] : null,
+          filters: queryData,
         ),
       );
 

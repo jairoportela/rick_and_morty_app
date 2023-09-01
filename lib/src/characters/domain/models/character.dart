@@ -30,6 +30,9 @@ enum CharacterStatus {
 
   const CharacterStatus(this.name);
   final String name;
+
+  @override
+  toString() => name;
 }
 
 @JsonEnum(valueField: 'name')
@@ -41,4 +44,7 @@ enum CharacterGender {
 
   const CharacterGender(this.name);
   final String name;
+
+  @override
+  toString() => name;
 }

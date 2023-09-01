@@ -9,6 +9,8 @@ class AppTheme {
     ),
     useMaterial3: true,
     textTheme: GoogleFonts.poppinsTextTheme(),
+    filledButtonTheme: FilledButtonThemeData(
+        style: FilledButton.styleFrom(minimumSize: const Size.fromHeight(50))),
     inputDecorationTheme: InputDecorationTheme(
       border: OutlineInputBorder(
         borderRadius: BorderRadius.circular(10.0),
