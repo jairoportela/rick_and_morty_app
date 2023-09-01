@@ -25,10 +25,13 @@ class EpisodeListItem extends StatelessWidget {
       subtitle: Text(episodeCode),
       leading: const Icon(Icons.video_collection),
       onTap: () {
-        Navigator.of(context).push(MaterialPageRoute(
-            builder: (ctx) => EpisodeDetailPage(
-                  item: item,
-                )));
+        Navigator.of(context).push(
+          MaterialPageRoute(
+            builder: (ctx) => EpisodeDetailScreen(
+              item: item,
+            ),
+          ),
+        );
       },
     );
   }

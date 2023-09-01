@@ -4,8 +4,8 @@ import 'package:rick_and_morty_app/src/characters/presentation/widgets/character
 import 'package:rick_and_morty_app/src/core/presentation/widgets/info_listtile_widget.dart';
 import 'package:rick_and_morty_app/src/core/presentation/widgets/separators.dart';
 
-class CharacterDetailPage extends StatelessWidget {
-  const CharacterDetailPage({
+class CharacterDetailScreen extends StatelessWidget {
+  const CharacterDetailScreen({
     super.key,
     required this.item,
     required this.id,

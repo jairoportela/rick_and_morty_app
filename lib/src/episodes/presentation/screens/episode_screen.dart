@@ -3,8 +3,8 @@ import 'package:rick_and_morty_app/src/core/presentation/widgets/info_listtile_w
 import 'package:rick_and_morty_app/src/core/presentation/widgets/separators.dart';
 import 'package:rick_and_morty_app/src/episodes/domain/models/episode.dart';
 
-class EpisodeDetailPage extends StatelessWidget {
-  const EpisodeDetailPage({
+class EpisodeDetailScreen extends StatelessWidget {
+  const EpisodeDetailScreen({
     required this.item,
     super.key,
   });

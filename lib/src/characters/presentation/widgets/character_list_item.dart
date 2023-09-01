@@ -22,11 +22,14 @@ class CharacterGridItem extends StatelessWidget {
     return LayoutBuilder(builder: (context, constraints) {
       return InkWell(
         onTap: () {
-          Navigator.of(context).push(MaterialPageRoute(
-              builder: (ctx) => CharacterDetailPage(
-                    item: item,
-                    id: id,
-                  )));
+          Navigator.of(context).push(
+            MaterialPageRoute(
+              builder: (ctx) => CharacterDetailScreen(
+                item: item,
+                id: id,
+              ),
+            ),
+          );
         },
         child: Card(
           child: Column(
