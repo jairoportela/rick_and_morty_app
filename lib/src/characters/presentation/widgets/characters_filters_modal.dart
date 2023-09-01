@@ -21,21 +21,24 @@ class _CharactersFilterModalState extends State<CharactersFilterModal> {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: 300,
-      child: Padding(
-        padding: const EdgeInsets.all(10),
-        child: Center(
+    return Padding(
+      padding:
+          EdgeInsets.only(bottom: MediaQuery.of(context).viewInsets.bottom),
+      child: SizedBox(
+        height: 300,
+        child: Padding(
+          padding: const EdgeInsets.all(10).copyWith(bottom: 0),
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisSize: MainAxisSize.min,
             children: [
               const Text('Characters Filters'),
               TextFormField(
                 initialValue: _filters.searchName,
                 onChanged: (search) {
+                  final value = _filters.copyWith(searchName: () => search);
                   setState(() {
-                    _filters = _filters.copyWith(searchName: () => search);
+                    _filters = value;
                   });
                 },
               ),
@@ -51,8 +54,9 @@ class _CharactersFilterModalState extends State<CharactersFilterModal> {
                       .toList(),
                   onChanged: (selected) {
                     if (selected == null) return;
+                    final newValue = _filters.copyWith(gender: () => selected);
                     setState(() {
-                      _filters = _filters.copyWith(gender: () => selected);
+                      _filters = newValue;
                     });
                   }),
               DropdownButtonFormField(
@@ -67,13 +71,16 @@ class _CharactersFilterModalState extends State<CharactersFilterModal> {
                       .toList(),
                   onChanged: (selected) {
                     if (selected == null) return;
+                    final newValue = _filters.copyWith(status: () => selected);
                     setState(() {
-                      _filters = _filters.copyWith(status: () => selected);
+                      _filters = newValue;
                     });
                   }),
               ElevatedButton(
-                onPressed: () => Navigator.pop(context,
-                    widget.initialFilters != _filters ? _filters : null),
+                onPressed: () {
+                  Navigator.pop(context,
+                      widget.initialFilters != _filters ? _filters : null);
+                },
                 child: const Text('Filter'),
               ),
             ],
