@@ -1,7 +1,44 @@
-class Character {
-  const Character();
+import 'package:json_annotation/json_annotation.dart';
 
-  factory Character.fromJson(Map<String, dynamic> json) {
-    return Character();
-  }
+part 'character.g.dart';
+
+class Character {
+  const Character({
+    required this.id,
+    required this.gender,
+    required this.image,
+    required this.created,
+    required this.name,
+    required this.species,
+    required this.status,
+    required this.type,
+  });
+  final int id;
+  final String name, species, type, image, created;
+  final CharacterStatus status;
+  final CharacterGender gender;
+
+  factory Character.fromJson(Map<String, dynamic> json) =>
+      _$CharacterFromJson(json);
+}
+
+@JsonEnum(valueField: 'status')
+enum CharacterStatus {
+  alive('Alive'),
+  dead('Dead'),
+  unknown('unknown');
+
+  const CharacterStatus(this.name);
+  final String name;
+}
+
+@JsonEnum(valueField: 'gender')
+enum CharacterGender {
+  female('Female'),
+  male('Male'),
+  genderless('Genderless'),
+  unknown('unknown');
+
+  const CharacterGender(this.name);
+  final String name;
 }
