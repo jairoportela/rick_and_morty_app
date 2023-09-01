@@ -7,19 +7,22 @@
     {
       "name": "rick_and_morty_app",
       "request": "launch",
-      "type": "dart"
+      "type": "dart",
+      "args": ["--dart-define-from-file", "api-keys.json"]
     },
     {
       "name": "rick_and_morty_app (profile mode)",
       "request": "launch",
       "type": "dart",
-      "flutterMode": "profile"
+      "flutterMode": "profile",
+      "args": ["--dart-define-from-file", "api-keys.json"]
     },
     {
       "name": "rick_and_morty_app (release mode)",
       "request": "launch",
       "type": "dart",
-      "flutterMode": "release"
+      "flutterMode": "release",
+      "args": ["--dart-define-from-file", "api-keys.json"]
     }
   ]
 }
