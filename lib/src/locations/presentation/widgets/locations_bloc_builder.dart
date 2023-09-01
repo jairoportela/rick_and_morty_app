@@ -55,6 +55,7 @@ class _LocationsInfiniteListState extends State<LocationsInfiniteList> {
             name: item.name,
             type: item.type,
             id: item.id.toString(),
+            item: item,
           ),
           newPageProgressIndicatorBuilder: (context) =>
               const LoadingIndicator(),
