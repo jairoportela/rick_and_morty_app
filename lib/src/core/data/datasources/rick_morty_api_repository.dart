@@ -21,7 +21,7 @@ PaginatedData<T> _decodeApi<T>(
 
 class RickAndMortyApiRepository extends RestApiRepository {
   @override
-  Future<PaginatedData<T>> getData<T>({
+  Future<PaginatedData<T>> getAll<T>({
     required String endpoint,
     required T Function(Map<String, dynamic> json) parserFn,
     Map<String, dynamic> queryParams = const {},
@@ -38,4 +38,21 @@ class RickAndMortyApiRepository extends RestApiRepository {
   }
 
   static const String _baseUrl = Environmet.rickAndMortyApiBaseUrl;
+
+  @override
+  Future<T> getOne<T>({
+    required String id,
+    required String endpoint,
+    required T Function(Map<String, dynamic> json) parserFn,
+  }) async {
+    try {
+      final uri = Uri.https(_baseUrl, '/api/$endpoint/$id');
+      final response = await http.get(uri);
+      final decodedResponse =
+          jsonDecode(utf8.decode(response.bodyBytes)) as Map<String, dynamic>;
+      return parserFn(decodedResponse);
+    } catch (error) {
+      throw ApiException('Error getting the resource $endpoint/$id');
+    }
+  }
 }
