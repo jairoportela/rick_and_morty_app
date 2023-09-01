@@ -10,7 +10,6 @@ Character _$CharacterFromJson(Map<String, dynamic> json) => Character(
       id: json['id'] as int,
       gender: $enumDecode(_$CharacterGenderEnumMap, json['gender']),
       image: json['image'] as String,
-      created: json['created'] as String,
       name: json['name'] as String,
       species: json['species'] as String,
       status: $enumDecode(_$CharacterStatusEnumMap, json['status']),
@@ -23,7 +22,6 @@ Map<String, dynamic> _$CharacterToJson(Character instance) => <String, dynamic>{
       'species': instance.species,
       'type': instance.type,
       'image': instance.image,
-      'created': instance.created,
       'status': _$CharacterStatusEnumMap[instance.status]!,
       'gender': _$CharacterGenderEnumMap[instance.gender]!,
     };

@@ -8,14 +8,13 @@ class Character {
     required this.id,
     required this.gender,
     required this.image,
-    required this.created,
     required this.name,
     required this.species,
     required this.status,
     required this.type,
   });
   final int id;
-  final String name, species, type, image, created;
+  final String name, species, type, image;
   final CharacterStatus status;
   final CharacterGender gender;
 
