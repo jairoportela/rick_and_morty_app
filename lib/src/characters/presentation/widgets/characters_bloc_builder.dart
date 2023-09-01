@@ -47,14 +47,20 @@ class _CharactersInfiniteListState extends State<CharactersInfiniteList> {
       onRefresh: () => Future.sync(
         () => _pagingController.refresh(),
       ),
-      child: PagedListView<int, Character>.separated(
+      child: PagedGridView<int, Character>(
+        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+          crossAxisCount: 2,
+          childAspectRatio: 2 / 3,
+          crossAxisSpacing: 10,
+          mainAxisSpacing: 10,
+        ),
         padding: const EdgeInsets.symmetric(horizontal: 20),
         pagingController: _pagingController,
         builderDelegate: PagedChildBuilderDelegate<Character>(
-          itemBuilder: (context, item, index) => CharacterListItem(
+          itemBuilder: (context, item, index) => CharacterGridItem(
             imageUrl: item.image,
             name: item.name,
-            status: item.status.name,
+            status: item.status,
             id: item.id.toString(),
           ),
           newPageProgressIndicatorBuilder: (context) =>
@@ -88,7 +94,6 @@ class _CharactersInfiniteListState extends State<CharactersInfiniteList> {
             child: Text('Empty characters.'),
           ),
         ),
-        separatorBuilder: (context, index) => const Divider(),
       ),
     );
   }
