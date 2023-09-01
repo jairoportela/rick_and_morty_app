@@ -100,3 +100,7 @@ _Libraries used in the project_
 ## Authors ✒️
 
 - **Jairo Andrés Portela Cortés**
+
+## Notes  🔴 🔴
+
+I don't have the permission over this Image: https://wallpapers.com/images/featured/rick-and-morty-8rc57d4ds44gqzau.jpg, please change it for other one if you want to upload this app in Production.
