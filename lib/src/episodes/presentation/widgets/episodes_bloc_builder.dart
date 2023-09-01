@@ -54,6 +54,7 @@ class _EpisodesInfiniteListState extends State<EpisodesInfiniteList> {
           itemBuilder: (context, item, index) => EpisodeListItem(
             name: item.name,
             episodeCode: item.episode,
+            item: item,
             id: item.id.toString(),
           ),
           newPageProgressIndicatorBuilder: (context) =>
