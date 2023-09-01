@@ -9,6 +9,6 @@ part of 'episode.dart';
 Episode _$EpisodeFromJson(Map<String, dynamic> json) => Episode(
       id: json['id'] as int,
       name: json['name'] as String,
-      airDate: json['airDate'] as String,
+      airDate: json['air_date'] as String,
       episode: json['episode'] as String,
     );
