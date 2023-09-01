@@ -12,10 +12,3 @@ Episode _$EpisodeFromJson(Map<String, dynamic> json) => Episode(
       airDate: json['airDate'] as String,
       episode: json['episode'] as String,
     );
-
-Map<String, dynamic> _$EpisodeToJson(Episode instance) => <String, dynamic>{
-      'id': instance.id,
-      'name': instance.name,
-      'airDate': instance.airDate,
-      'episode': instance.episode,
-    };
