@@ -58,6 +58,7 @@ class _CharactersInfiniteListState extends State<CharactersInfiniteList> {
         pagingController: _pagingController,
         builderDelegate: PagedChildBuilderDelegate<Character>(
           itemBuilder: (context, item, index) => CharacterGridItem(
+            item: item,
             imageUrl: item.image,
             name: item.name,
             status: item.status,
