@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:rick_and_morty_app/src/core/config/routes.dart';
 import 'package:rick_and_morty_app/src/episodes/domain/models/episodes_filter.dart';
 import 'package:rick_and_morty_app/src/episodes/presentation/widgets/episodes_bloc_builder.dart';
 import 'package:rick_and_morty_app/src/episodes/presentation/widgets/episodes_bloc_provider.dart';
@@ -23,7 +24,7 @@ class EpisodesScreenBuilder extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Episodes'),
+        title: Text(ScreensTitles.episodes.title),
         actions: [
           IconButton(
               onPressed: () async {

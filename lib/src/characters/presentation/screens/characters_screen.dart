@@ -5,6 +5,7 @@ import 'package:rick_and_morty_app/src/characters/presentation/widgets/character
 import 'package:rick_and_morty_app/src/characters/presentation/widgets/characters_bloc_builder.dart';
 import 'package:rick_and_morty_app/src/characters/presentation/widgets/characters_filters_modal.dart';
 import 'package:rick_and_morty_app/src/characters/providers/characters_overview_bloc.dart';
+import 'package:rick_and_morty_app/src/core/config/routes.dart';
 
 class CharactersScreen extends StatelessWidget {
   const CharactersScreen({super.key});
@@ -23,7 +24,7 @@ class CharactersScreenBuilder extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Characters'),
+        title: Text(ScreensTitles.characters.title),
         actions: [
           IconButton(
               onPressed: () async {

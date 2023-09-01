@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:rick_and_morty_app/src/characters/data/repositories/character_repository.dart';
 import 'package:rick_and_morty_app/src/core/config/routes.dart';
 import 'package:rick_and_morty_app/src/core/core.dart';
+import 'package:rick_and_morty_app/src/core/theme/app_theme.dart';
 import 'package:rick_and_morty_app/src/episodes/data/repositories/episode_repository.dart';
 import 'package:rick_and_morty_app/src/home/home_screen.dart';
 import 'package:rick_and_morty_app/src/locations/data/repositories/location_repository.dart';
@@ -37,10 +38,7 @@ class AppView extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Rick and Morty APP',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.green),
-        useMaterial3: true,
-      ),
+      theme: AppTheme.theme,
       initialRoute: RouteGenerator.home,
       onGenerateRoute: RouteGenerator.generateRoute,
       home: const HomeScreen(),

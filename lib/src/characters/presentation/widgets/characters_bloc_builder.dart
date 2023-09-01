@@ -6,7 +6,7 @@ import 'package:infinite_scroll_pagination/infinite_scroll_pagination.dart';
 import 'package:rick_and_morty_app/src/characters/domain/models/character.dart';
 import 'package:rick_and_morty_app/src/characters/presentation/widgets/character_list_item.dart';
 import 'package:rick_and_morty_app/src/characters/providers/characters_overview_bloc.dart';
-import 'package:rick_and_morty_app/src/core/presentation/loading_indicator.dart';
+import 'package:rick_and_morty_app/src/core/presentation/widgets/loading_indicator.dart';
 import 'package:rick_and_morty_app/src/core/utils/status_enum.dart';
 
 class CharactersInfiniteList extends StatefulWidget {
@@ -47,14 +47,21 @@ class _CharactersInfiniteListState extends State<CharactersInfiniteList> {
       onRefresh: () => Future.sync(
         () => _pagingController.refresh(),
       ),
-      child: PagedListView<int, Character>.separated(
+      child: PagedGridView<int, Character>(
+        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+          crossAxisCount: 2,
+          childAspectRatio: 2 / 3,
+          crossAxisSpacing: 10,
+          mainAxisSpacing: 10,
+        ),
         padding: const EdgeInsets.symmetric(horizontal: 20),
         pagingController: _pagingController,
         builderDelegate: PagedChildBuilderDelegate<Character>(
-          itemBuilder: (context, item, index) => CharacterListItem(
+          itemBuilder: (context, item, index) => CharacterGridItem(
+            item: item,
             imageUrl: item.image,
             name: item.name,
-            status: item.status.name,
+            status: item.status,
             id: item.id.toString(),
           ),
           newPageProgressIndicatorBuilder: (context) =>
@@ -88,7 +95,6 @@ class _CharactersInfiniteListState extends State<CharactersInfiniteList> {
             child: Text('Empty characters.'),
           ),
         ),
-        separatorBuilder: (context, index) => const Divider(),
       ),
     );
   }
