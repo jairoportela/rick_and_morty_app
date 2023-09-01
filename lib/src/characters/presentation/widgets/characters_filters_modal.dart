@@ -3,7 +3,6 @@ import 'package:rick_and_morty_app/src/characters/domain/models/character.dart';
 import 'package:rick_and_morty_app/src/characters/domain/models/character_filter.dart';
 import 'package:rick_and_morty_app/src/core/presentation/widgets/custom_form_field.dart';
 import 'package:rick_and_morty_app/src/core/presentation/widgets/custom_modal_sheet.dart';
-import 'package:rick_and_morty_app/src/core/presentation/widgets/custom_text.dart';
 import 'package:rick_and_morty_app/src/core/presentation/widgets/filter_button.dart';
 import 'package:rick_and_morty_app/src/core/presentation/widgets/separators.dart';
 

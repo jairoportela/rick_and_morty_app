@@ -35,3 +35,12 @@ class RouteGenerator {
     }
   }
 }
+
+enum ScreensTitles {
+  characters('Characters'),
+  episodes('Episodes'),
+  locations('Locations');
+
+  const ScreensTitles(this.title);
+  final String title;
+}

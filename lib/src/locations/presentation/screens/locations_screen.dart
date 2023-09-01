@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:rick_and_morty_app/src/core/config/routes.dart';
 import 'package:rick_and_morty_app/src/locations/domain/models/locations_filter.dart';
 import 'package:rick_and_morty_app/src/locations/presentation/widgets/locations_bloc_builder.dart';
 import 'package:rick_and_morty_app/src/locations/presentation/widgets/locations_bloc_provider.dart';
@@ -23,7 +24,7 @@ class LocationsScreenBuilder extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Locations'),
+        title: Text(ScreensTitles.locations.title),
         actions: [
           IconButton(
               onPressed: () async {
