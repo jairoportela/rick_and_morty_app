@@ -1,7 +1,9 @@
+import 'package:equatable/equatable.dart';
+
 /// Abstract base class for query helper.
 ///
 /// Represents data that can be used as query parameters in requests.
-abstract class QueryHelper {
+abstract class QueryHelper extends Equatable {
   /// Creates a new instance of [QueryHelper].
   const QueryHelper();
 

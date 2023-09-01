@@ -2,7 +2,11 @@ import 'package:rick_and_morty_app/src/characters/domain/models/character.dart';
 import 'package:rick_and_morty_app/src/core/utils/query_helper.dart';
 
 class CharacterFilters extends QueryHelper {
-  const CharacterFilters({this.gender, this.searchName, this.status});
+  const CharacterFilters({
+    this.gender,
+    this.searchName,
+    this.status,
+  });
   final String? searchName;
   final CharacterGender? gender;
   final CharacterStatus? status;
@@ -30,4 +34,7 @@ class CharacterFilters extends QueryHelper {
     }
     return filters;
   }
+
+  @override
+  List<Object?> get props => [searchName, gender, status];
 }
