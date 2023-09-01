@@ -3,7 +3,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:infinite_scroll_pagination/infinite_scroll_pagination.dart';
-import 'package:rick_and_morty_app/src/core/presentation/loading_indicator.dart';
+import 'package:rick_and_morty_app/src/core/presentation/widgets/loading_indicator.dart';
 import 'package:rick_and_morty_app/src/core/utils/status_enum.dart';
 import 'package:rick_and_morty_app/src/locations/domain/models/location.dart';
 import 'package:rick_and_morty_app/src/locations/presentation/widgets/locations_list_item.dart';

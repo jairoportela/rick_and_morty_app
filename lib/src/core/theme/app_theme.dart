@@ -1,0 +1,21 @@
+import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+
+class AppTheme {
+  static ThemeData theme = ThemeData(
+    colorScheme: ColorScheme.fromSeed(
+      seedColor: Colors.amber,
+      brightness: Brightness.light,
+    ),
+    useMaterial3: true,
+    textTheme: GoogleFonts.poppinsTextTheme(),
+    inputDecorationTheme: InputDecorationTheme(
+      border: OutlineInputBorder(
+        borderRadius: BorderRadius.circular(10.0),
+      ),
+      filled: true,
+      hintStyle: TextStyle(color: Colors.grey[800]),
+      fillColor: const Color.fromRGBO(255, 255, 255, 0.055),
+    ),
+  );
+}

@@ -6,7 +6,7 @@ import 'package:infinite_scroll_pagination/infinite_scroll_pagination.dart';
 import 'package:rick_and_morty_app/src/characters/domain/models/character.dart';
 import 'package:rick_and_morty_app/src/characters/presentation/widgets/character_list_item.dart';
 import 'package:rick_and_morty_app/src/characters/providers/characters_overview_bloc.dart';
-import 'package:rick_and_morty_app/src/core/presentation/loading_indicator.dart';
+import 'package:rick_and_morty_app/src/core/presentation/widgets/loading_indicator.dart';
 import 'package:rick_and_morty_app/src/core/utils/status_enum.dart';
 
 class CharactersInfiniteList extends StatefulWidget {
