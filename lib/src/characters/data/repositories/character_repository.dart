@@ -13,13 +13,5 @@ class CharacterRepository {
     );
   }
 
-  Future<Character> getOne(String id) {
-    return _repository.getOne(
-      id: id,
-      endpoint: ApiEndpoints.character.path,
-      parserFn: Character.fromJson,
-    );
-  }
-
   final RickAndMortyApiRepository _repository;
 }

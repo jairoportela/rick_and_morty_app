@@ -11,7 +11,7 @@ PaginatedData<T> _decodeApi<T>(
   T Function(Map<String, dynamic> json) parserFn,
 ) {
   final info = data['info'] as Map;
-  final results = data['results'] as List<Map<String, dynamic>>;
+  final results = data['results'] as List<dynamic>;
   return PaginatedData<T>(
       data: results.map((result) => parserFn(result)).toList(),
       pages: info['pages'],
@@ -38,21 +38,4 @@ class RickAndMortyApiRepository extends RestApiRepository {
   }
 
   static const String _baseUrl = Environmet.rickAndMortyApiBaseUrl;
-
-  @override
-  Future<T> getOne<T>({
-    required String id,
-    required String endpoint,
-    required T Function(Map<String, dynamic> json) parserFn,
-  }) async {
-    try {
-      final uri = Uri.https(_baseUrl, '/api/$endpoint/$id');
-      final response = await http.get(uri);
-      final decodedResponse =
-          jsonDecode(utf8.decode(response.bodyBytes)) as Map<String, dynamic>;
-      return parserFn(decodedResponse);
-    } catch (error) {
-      throw ApiException('Error getting the resource $endpoint/$id');
-    }
-  }
 }

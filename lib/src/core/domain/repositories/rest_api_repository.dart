@@ -7,9 +7,4 @@ abstract class RestApiRepository {
     required T Function(Map<String, dynamic> json) parserFn,
     Map<String, dynamic> queryParams = const {},
   });
-  Future<T> getOne<T>({
-    required String id,
-    required String endpoint,
-    required T Function(Map<String, dynamic> json) parserFn,
-  });
 }

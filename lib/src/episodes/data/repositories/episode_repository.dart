@@ -13,13 +13,5 @@ class EpisodeRepository {
     );
   }
 
-  Future<Episode> getOne(String id) {
-    return _repository.getOne(
-      id: id,
-      endpoint: ApiEndpoints.episode.path,
-      parserFn: Episode.fromJson,
-    );
-  }
-
   final RickAndMortyApiRepository _repository;
 }

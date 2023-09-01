@@ -13,13 +13,5 @@ class LocationRepository {
     );
   }
 
-  Future<Location> getOne(String id) {
-    return _repository.getOne(
-      id: id,
-      endpoint: ApiEndpoints.location.path,
-      parserFn: Location.fromJson,
-    );
-  }
-
   final RickAndMortyApiRepository _repository;
 }
